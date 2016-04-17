@@ -16,7 +16,10 @@
     <a-scene>
       
       
-      
+<a-scene>
+  <a-assets>
+    <a-asset-item id="clark-obj" src="../images/clarks.obj"></a-asset-item>
+    <a-asset-item id="clark-mtl" src="../images/clarks.mtl"></a-asset-item>
       
       
 
@@ -31,9 +34,9 @@
       <a-plane rotation="-90 0 0" width="20" height="20" color="#ccccff"></a-plane>
       
 
-      <a-entity id="model2" position="0 0 -0.5" visible="true">
+      <a-entity id="model2" position="0 0 -0.5" visible="true" obj-model="obj: #clark-obj; mtl: #clark-mtl" position="-1 1.75 -0.75" rotation="90 0 0" scale="0.2 0.2 0.2">
       <a-animation attribute="rotation" from="0 30 0" to="0 -330 0" dur="15000" easing="linear" repeat="infinite"></a-animation>
-      <a-model position="-1 1.75 -0.75" rotation="90 0 0" scale="0.2 0.2 0.2" src="../images/clarks.dae"></a-model>
+      
       </a-entity>
 
       <a-entity id="model" position="0 0 1" visible="false">
