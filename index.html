@@ -24,12 +24,15 @@
 <a-entity id="camera" position="0 1.8 4">  
         <a-entity camera gamepad-controls look-controls wasd-controls>
         <a-entity cursor="fuse: true; timeout: 100; maxDistance: 500;" geometry="primitive: ring; radiusInner: 0.00; radiusOuter: 0.02" material="color: black" position="0 0 -2"></a-entity>
-        </a-entity>        
+        </a-entity> 
+        <a-animation attribute="position" begin="start-link1" easing="linear" to="2.3 1.8 -1" dur="0"></a-animation>       
       </a-entity>
       
       
       <a-plane rotation="-90 0 0" width="20" height="20" color="#ccccff"></a-plane>
       
+      <a-entity id="link1" geometry="primitive: box; depth: 0.5; width: 0.5; height: 1" position="2.3 -0.4 -1" material=" 
+src: url(images/up-arrow-icon.png)"></a-entity> 
 
       <a-entity id="model2" position="0 0 -0.5" visible="true">
       <a-animation attribute="rotation" from="0 30 0" to="0 -330 0" dur="15000" easing="linear" repeat="infinite"></a-animation>
@@ -81,6 +84,11 @@ document.querySelector('#model').setAttribute('visible', 'false');
 document.querySelector('#model2').setAttribute('visible', 'true');
 
 });
+
+document.querySelector('#link1').addEventListener('click', function () {
+document.querySelector('#camera').emit('start-link1');
+});
+
 </script>
 
 
